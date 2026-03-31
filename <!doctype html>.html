@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo Simples</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    .font-heading { font-family: 'DM Serif Display', Georgia, serif; }
+    .font-body { font-family: 'Source Sans 3', sans-serif; }
+    .timeline-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .timeline-line { width: 2px; flex-shrink: 0; }
+    .section-fade { animation: fadeUp 0.6s ease both; }
+    .section-fade:nth-child(1) { animation-delay: 0.1s; }
+    .section-fade:nth-child(2) { animation-delay: 0.25s; }
+    .section-fade:nth-child(3) { animation-delay: 0.4s; }
+    .section-fade:nth-child(4) { animation-delay: 0.55s; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .skill-bar { transition: width 1s ease; }
+    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body bg-stone-50 text-stone-800 overflow-auto">
+  <div id="app-wrapper" class="w-full h-full">
+   <!-- Header / Nome Principal -->
+   <header id="resume-header" class="w-full bg-stone-800 text-stone-50 py-16 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+     <svg width="100%" height="100%"><defs>
+       <pattern id="grid" width="40" height="40" patternunits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" />
+       </pattern>
+      </defs><rect width="100%" height="100%" fill="url(#grid)" />
+     </svg>
+    </div>
+    <div class="max-w-3xl mx-auto relative z-10 text-center">
+     <h1 id="main-name" class="font-heading text-5xl md:text-6xl mb-3 tracking-tight" style="color: #e8d5b7;">Cleber Junior</h1>
+     <p id="main-title" class="text-lg md:text-xl font-light tracking-widest uppercase opacity-80">Desenvolvedor Web Júnior</p>
+     <div class="flex flex-wrap justify-center gap-6 mt-8 text-sm opacity-70">
+      <span class="flex items-center gap-2"><i data-lucide="mail" style="width:16px; height:16px;"></i><span id="header-email">cleber.junior@email.com</span></span> <span class="flex items-center gap-2"><i data-lucide="phone" style="width:16px; height:16px;"></i><span id="header-phone">(XX) 99999-0000</span></span> <span class="flex items-center gap-2"><i data-lucide="map-pin" style="width:16px; height:16px;"></i><span id="header-location">Laranjeiras</span></span>
+     </div>
+    </div>
+   </header>
+   <main class="max-w-3xl mx-auto px-6 py-12 space-y-12">
+    <!-- Sobre Mim -->
+    <section class="section-fade" aria-labelledby="about-heading">
+     <div class="flex items-center gap-3 mb-5">
+      <span class="flex items-center justify-center w-10 h-10 rounded-full" style="background-color: #e8d5b7;"> <i data-lucide="user" style="width:20px; height:20px; color: #292524;"></i> </span>
+      <h2 id="about-heading" class="font-heading text-2xl text-stone-800">Sobre Mim</h2>
+     </div>
+     <p id="about-content" class="text-stone-600 leading-relaxed pl-13 ml-[52px]">Estudante apaixonado por tecnologia e desenvolvimento web. Busco oportunidades para aplicar meus conhecimentos em HTML, CSS e JavaScript em projetos reais, sempre disposto a aprender novas tecnologias.</p>
+    </section><!-- Experiência Profissional -->
+    <section class="section-fade" aria-labelledby="experience-heading">
+     <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-full" style="background-color: #e8d5b7;"> <i data-lucide="briefcase" style="width:20px; height:20px; color: #292524;"></i> </span>
+      <h2 id="experience-heading" class="font-heading text-2xl text-stone-800">Experiência Profissional</h2>
+     </div>
+     <div class="ml-[52px] space-y-6">
+      <!-- Job 1 -->
+      <article class="card-hover bg-white rounded-xl p-5 border border-stone-200">
+       <div class="flex flex-wrap justify-between items-start mb-2">
+        <h3 class="font-semibold text-lg text-stone-800">Estagiário de Desenvolvimento Web</h3><span class="text-xs font-medium px-3 py-1 rounded-full" style="background-color: #e8d5b7; color: #292524;">2023 – Atual</span>
+       </div>
+       <p class="text-sm font-medium mb-2" style="color: #7c6a50;">TechStart Soluções Digitais</p>
+       <ul class="list-none space-y-1 text-stone-600 text-sm">
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:14px; height:14px; margin-top:3px; flex-shrink:0; color: #7c6a50;"></i> Desenvolvimento de páginas web responsivas com HTML, CSS e JavaScript</li>
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:14px; height:14px; margin-top:3px; flex-shrink:0; color: #7c6a50;"></i> Manutenção e atualização de sites de clientes</li>
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:14px; height:14px; margin-top:3px; flex-shrink:0; color: #7c6a50;"></i> Colaboração com a equipe de design na criação de interfaces</li>
+       </ul>
+      </article><!-- Job 2 -->
+      <article class="card-hover bg-white rounded-xl p-5 border border-stone-200">
+       <div class="flex flex-wrap justify-between items-start mb-2">
+        <h3 class="font-semibold text-lg text-stone-800">Monitor de Informática</h3><span class="text-xs font-medium px-3 py-1 rounded-full" style="background-color: #e8d5b7; color: #292524;">2022 – 2023</span>
+       </div>
+       <p class="text-sm font-medium mb-2" style="color: #7c6a50;">Escola Técnica Municipal</p>
+       <ul class="list-none space-y-1 text-stone-600 text-sm">
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:14px; height:14px; margin-top:3px; flex-shrink:0; color: #7c6a50;"></i> Auxílio aos alunos em aulas práticas de informática</li>
+        <li class="flex items-start gap-2"><i data-lucide="chevron-right" style="width:14px; height:14px; margin-top:3px; flex-shrink:0; color: #7c6a50;"></i> Preparação de materiais didáticos sobre ferramentas digitais</li>
+       </ul>
+      </article>
+     </div>
+    </section><!-- Educação -->
+    <section class="section-fade" aria-labelledby="education-heading">
+     <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-full" style="background-color: #e8d5b7;"> <i data-lucide="graduation-cap" style="width:20px; height:20px; color: #292524;"></i> </span>
+      <h2 id="education-heading" class="font-heading text-2xl text-stone-800">Educação</h2>
+     </div>
+     <div class="ml-[52px] space-y-6">
+      <article class="card-hover bg-white rounded-xl p-5 border border-stone-200">
+       <div class="flex flex-wrap justify-between items-start mb-1">
+        <h3 class="font-semibold text-lg text-stone-800">Análise e Desenvolvimento de Sistemas</h3><span class="text-xs font-medium px-3 py-1 rounded-full" style="background-color: #e8d5b7; color: #292524;">2022 – 2025</span>
+       </div>
+       <p class="text-sm font-medium" style="color: #7c6a50;">Universidade Federal de São Paulo (UNIFESP)</p>
+      </article>
+      <article class="card-hover bg-white rounded-xl p-5 border border-stone-200">
+       <div class="flex flex-wrap justify-between items-start mb-1">
+        <h3 class="font-semibold text-lg text-stone-800">Técnico em Informática</h3><span class="text-xs font-medium px-3 py-1 rounded-full" style="background-color: #e8d5b7; color: #292524;">2019 – 2021</span>
+       </div>
+       <p class="text-sm font-medium" style="color: #7c6a50;">ETEC – Escola Técnica Estadual</p>
+      </article>
+     </div>
+    </section><!-- Cursos Complementares -->
+    <section class="section-fade" aria-labelledby="courses-heading">
+     <div class="flex items-center gap-3 mb-6">
+      <span class="flex items-center justify-center w-10 h-10 rounded-full" style="background-color: #e8d5b7;"> <i data-lucide="award" style="width:20px; height:20px; color: #292524;"></i> </span>
+      <h2 id="courses-heading" class="font-heading text-2xl text-stone-800">Cursos Complementares</h2>
+     </div>
+     <div class="ml-[52px] grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div class="card-hover bg-white rounded-xl p-4 border border-stone-200 flex items-center gap-3">
+       <i data-lucide="check-circle" style="width:18px; height:18px; flex-shrink:0; color: #7c6a50;"></i>
+       <div>
+        <p class="font-medium text-sm text-stone-800">HTML &amp; CSS Completo</p>
+        <p class="text-xs text-stone-500">Alura · 2023</p>
+       </div>
+      </div>
+      <div class="card-hover bg-white rounded-xl p-4 border border-stone-200 flex items-center gap-3">
+       <i data-lucide="check-circle" style="width:18px; height:18px; flex-shrink:0; color: #7c6a50;"></i>
+       <div>
+        <p class="font-medium text-sm text-stone-800">JavaScript Essencial</p>
+        <p class="text-xs text-stone-500">Rocketseat · 2023</p>
+       </div>
+      </div>
+      <div class="card-hover bg-white rounded-xl p-4 border border-stone-200 flex items-center gap-3">
+       <i data-lucide="check-circle" style="width:18px; height:18px; flex-shrink:0; color: #7c6a50;"></i>
+       <div>
+        <p class="font-medium text-sm text-stone-800">Git e GitHub</p>
+        <p class="text-xs text-stone-500">DIO · 2022</p>
+       </div>
+      </div>
+      <div class="card-hover bg-white rounded-xl p-4 border border-stone-200 flex items-center gap-3">
+       <i data-lucide="check-circle" style="width:18px; height:18px; flex-shrink:0; color: #7c6a50;"></i>
+       <div>
+        <p class="font-medium text-sm text-stone-800">Design Responsivo</p>
+        <p class="text-xs text-stone-500">Coursera · 2022</p>
+       </div>
+      </div>
+     </div>
+    </section>
+   </main><!-- Footer -->
+   <footer class="w-full text-center py-6 text-xs text-stone-400 border-t border-stone-200">
+    <p>Currículo criado como atividade prática de HTML · 2024</p>
+   </footer>
+  </div>
+  <script>
+    // Default config
+    const defaultConfig = {
+      full_name: 'Cleber Junior',
+      job_title: 'Desenvolvedor Web Júnior',
+      about_text: 'Estudante apaixonado por tecnologia e desenvolvimento web. Busco oportunidades para aplicar meus conhecimentos em HTML, CSS e JavaScript em projetos reais, sempre disposto a aprender novas tecnologias.',
+      email_text: 'cleber.junior@email.com',
+      phone_text: '(XX) 99999-0000',
+      location_text: 'Laranjeiras',
+      background_color: '#292524',
+      surface_color: '#ffffff',
+      text_color: '#44403c',
+      accent_color: '#e8d5b7',
+      accent_dark: '#7c6a50',
+      font_family: 'Source Sans 3',
+      font_size: 16
+    };
+
+    function applyConfig(config) {
+      const c = { ...defaultConfig, ...config };
+
+      // Text content
+      document.getElementById('main-name').textContent = c.full_name;
+      document.getElementById('main-title').textContent = c.job_title;
+      document.getElementById('about-content').textContent = c.about_text;
+      document.getElementById('header-email').textContent = c.email_text;
+      document.getElementById('header-phone').textContent = c.phone_text;
+      document.getElementById('header-location').textContent = c.location_text;
+
+      // Colors — header
+      const header = document.getElementById('resume-header');
+      header.style.backgroundColor = c.background_color;
+
+      // Accent color on name
+      document.getElementById('main-name').style.color = c.accent_color;
+
+      // Accent badges
+      document.querySelectorAll('[style*="background-color: #e8d5b7"], [style*="background-color: ' + c.accent_color + '"]').forEach(el => {
+        // Only badges and icon circles
+      });
+
+      // Update accent circles
+      document.querySelectorAll('.rounded-full').forEach(el => {
+        if (el.querySelector('[data-lucide]') && el.classList.contains('flex')) {
+          el.style.backgroundColor = c.accent_color;
+        }
+        // Date badges
+        if (el.classList.contains('text-xs') && el.classList.contains('font-medium')) {
+          el.style.backgroundColor = c.accent_color;
+          el.style.color = c.background_color;
+        }
+      });
+
+      // Surface color on cards
+      document.querySelectorAll('.card-hover').forEach(el => {
+        el.style.backgroundColor = c.surface_color;
+      });
+
+      // Text color
+      document.querySelectorAll('.text-stone-600, .text-stone-800').forEach(el => {
+        if (!el.closest('header')) {
+          el.style.color = c.text_color;
+        }
+      });
+
+      // Accent dark
+      document.querySelectorAll('[style*="color: #7c6a50"]').forEach(el => {
+        el.style.color = c.accent_dark;
+      });
+
+      // Font
+      const fontStack = `${c.font_family}, 'Source Sans 3', sans-serif`;
+      document.body.style.fontFamily = fontStack;
+
+      // Heading font stays DM Serif Display but we allow override
+      const headingStack = `'DM Serif Display', Georgia, serif`;
+      document.querySelectorAll('.font-heading').forEach(el => {
+        el.style.fontFamily = headingStack;
+      });
+
+      // Font size
+      const base = c.font_size;
+      document.getElementById('main-name').style.fontSize = `${base * 3.2}px`;
+      document.getElementById('main-title').style.fontSize = `${base * 1.2}px`;
+      document.getElementById('about-content').style.fontSize = `${base}px`;
+      document.querySelectorAll('h2').forEach(el => el.style.fontSize = `${base * 1.5}px`);
+      document.querySelectorAll('h3').forEach(el => el.style.fontSize = `${base * 1.12}px`);
+    }
+
+    // Apply initial config
+    applyConfig(defaultConfig);
+
+    // Initialize Element SDK
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => {
+        applyConfig(config);
+      },
+      mapToCapabilities: (config) => ({
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); }
+          },
+          {
+            get: () => config.accent_dark || defaultConfig.accent_dark,
+            set: (v) => { config.accent_dark = v; window.elementSdk.setConfig({ accent_dark: v }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
+        }
+      }),
+      mapToEditPanelValues: (config) => new Map([
+        ['full_name', config.full_name || defaultConfig.full_name],
+        ['job_title', config.job_title || defaultConfig.job_title],
+        ['about_text', config.about_text || defaultConfig.about_text],
+        ['email_text', config.email_text || defaultConfig.email_text],
+        ['phone_text', config.phone_text || defaultConfig.phone_text],
+        ['location_text', config.location_text || defaultConfig.location_text]
+      ])
+    });
+
+    // Init icons
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e51dc42162762c3',t:'MTc3NDk4NjM4OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
